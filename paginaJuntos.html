@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1 Año a tu lado | Nuestra Historia</title>
-    <!-- Tailwind CSS CDN -->
+   
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+   
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;800;900&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Canvas Confetti for special effects -->
+   
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script>
@@ -35,7 +34,6 @@
         }
     </script>
     <style>
-        /* Gradiente animado de fondo */
         body {
             font-family: 'Nunito', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #311042 50%, #172554 75%, #0f172a 100%);
@@ -51,7 +49,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Glassmorphism */
         .glass-panel {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(14px);
@@ -67,7 +64,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Floating particles */
         .particle {
             position: absolute;
             pointer-events: none;
@@ -88,7 +84,6 @@
             }
         }
 
-        /* Wobble piggy animation */
         @keyframes piggyBounce {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-12px) rotate(3deg); }
@@ -97,7 +92,6 @@
             animation: piggyBounce 3s ease-in-out infinite;
         }
 
-        /* Flip card styling */
         .flip-card {
             perspective: 1000px;
         }
@@ -116,7 +110,6 @@
             transform: rotateY(180deg);
         }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -131,35 +124,35 @@
 </head>
 <body class="relative min-h-screen">
 
-    <!-- Fondo de Partículas Dinámicas -->
+    <!-- REPRODUCTOR DE CANCIÓN (Jorge Cuellar - AYAYAY) -->
+    <audio id="romanticAudio" loop preload="auto">
+        <source src="Jorge Cuellar - AYAYAY (Lyric Visualizer).mp3" type="audio/mp3">
+    </audio>
+
     <div id="particles-container" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
 
-    <!-- Botón de Audio Ambiental Flotante -->
     <div class="fixed top-5 right-5 z-50 flex items-center gap-2">
         <button id="musicToggleBtn" class="flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-white/20 text-xs sm:text-sm font-semibold tracking-wide text-white hover:bg-white/20 transition-all duration-300 shadow-lg active:scale-95 group">
             <span id="musicIcon" class="text-base sm:text-lg animate-pulse">🎵</span>
-            <span id="musicText">Melodía: Desactivada</span>
+            <span id="musicText">AYAYAY: Desactivada</span>
         </button>
     </div>
 
-    <!-- CONTENEDOR PRINCIPAL -->
     <main class="relative z-10 max-w-5xl mx-auto px-4 py-10 sm:py-16 flex flex-col gap-16 md:gap-24">
 
-        <!-- HEADER / HERO SECTION -->
         <header class="text-center pt-6 sm:pt-10 flex flex-col items-center">
-            <!-- Badge estilo gamer lindo -->
+           
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-cyan-400/30 text-cyan-200 text-xs sm:text-sm font-bold tracking-wider uppercase mb-6 shadow-md animate-bounce">
                 <span>🎮</span> Servidor del Destino: 365 Días Conectados <span>✨</span>
             </div>
 
-            <!-- Título Principal con combinación Azul & Morado -->
             <h1 class="text-4xl sm:text-6xl md:text-7xl font-bubble font-black tracking-tight leading-tight mb-4">
                 <span class="bg-gradient-to-r from-sky-400 via-purple-300 to-purple-400 bg-clip-text text-transparent drop-shadow-sm">
                     Feliz Primer Año,
                 </span>
                 <br>
                 <span class="bg-gradient-to-r from-purple-400 via-pink-300 to-sky-300 bg-clip-text text-transparent">
-                    Mi Cerdita Favorita 🐷💙💜
+                    Mi chikita Hermosa 💙💜
                 </span>
             </h1>
 
@@ -167,83 +160,76 @@
                 Todo comenzó con una partida casual en <span class="text-sky-300 font-semibold">Roblox</span> siendo amigos... y sin darnos cuenta, construimos juntos el amor más bonito del universo.
             </p>
 
-            <!-- ILUSTRACIÓN SVG DE LOS DOS CERDITOS TIERNO (UNO AZUL Y UNO MORADO) -->
             <div class="relative w-full max-w-md mx-auto my-4 py-4 flex justify-center items-center">
-                <!-- Brillo de fondo -->
+               
                 <div class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-sky-500/20 to-purple-600/30 blur-3xl -z-10 animate-pulse"></div>
 
                 <div class="flex items-center justify-center gap-4 sm:gap-6 bounce-piggy">
-                    <!-- Cerdito con moño Azul (Representa a ella y su color favorito) -->
+                 
                     <div class="flex flex-col items-center group cursor-pointer" onclick="piggySqueak('pig1')">
                         <div class="relative">
                             <svg class="w-32 h-32 sm:w-40 sm:h-40 drop-shadow-[0_10px_20px_rgba(56,189,248,0.3)] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Orejas -->
                                 <path d="M45 65C30 35 60 25 75 45L45 65Z" fill="#f472b6"/>
                                 <path d="M50 60C40 40 60 32 68 47L50 60Z" fill="#fda4af"/>
                                 <path d="M155 65C170 35 140 25 125 45L155 65Z" fill="#f472b6"/>
                                 <path d="M150 60C160 40 140 32 132 47L150 60Z" fill="#fda4af"/>
-                                <!-- Cabeza cuerpo redondito -->
+                               
                                 <ellipse cx="100" cy="115" rx="75" ry="65" fill="#fbcfe8"/>
                                 <ellipse cx="100" cy="118" rx="70" ry="60" fill="#f9a8d4"/>
-                                <!-- Chapitas rosadas -->
+                               
                                 <circle cx="55" cy="122" r="14" fill="#fb7185" opacity="0.6"/>
                                 <circle cx="145" cy="122" r="14" fill="#fb7185" opacity="0.6"/>
-                                <!-- Ojos tiernos anime con brillitos -->
+                               
                                 <circle cx="68" cy="98" r="9" fill="#1e1b4b"/>
                                 <circle cx="71" cy="95" r="3.5" fill="#ffffff"/>
                                 <circle cx="132" cy="98" r="9" fill="#1e1b4b"/>
                                 <circle cx="135" cy="95" r="3.5" fill="#ffffff"/>
-                                <!-- Hocico Cerdito -->
+                               
                                 <rect x="75" y="105" width="50" height="36" rx="18" fill="#fda4af"/>
                                 <ellipse cx="88" cy="123" rx="4" ry="7" fill="#be185d"/>
                                 <ellipse cx="112" cy="123" rx="4" ry="7" fill="#be185d"/>
-                                <!-- Moño / Lazo Azul Celeste (Color de ella) -->
+                               
                                 <g transform="translate(42, 28) rotate(-15)">
                                     <path d="M10 20 L-8 8 L-6 24 Z" fill="#38bdf8"/>
                                     <path d="M22 20 L40 8 L38 24 Z" fill="#38bdf8"/>
                                     <circle cx="16" cy="19" r="6" fill="#0284c7"/>
                                 </g>
-                                <!-- Pequeño bloque de Roblox en manita -->
                                 <rect x="35" y="145" width="22" height="22" rx="4" fill="#38bdf8" stroke="#ffffff" stroke-width="2"/>
                             </svg>
                         </div>
                         <span class="mt-2 text-xs sm:text-sm font-bold text-sky-300 bg-sky-950/60 px-3 py-1 rounded-full border border-sky-400/40">Tu Cerdita (Azul)</span>
                     </div>
 
-                    <!-- Corazón central palpitante -->
                     <div class="flex flex-col items-center">
                         <div class="text-3xl sm:text-5xl animate-pulse select-none">💖</div>
                         <span class="text-[10px] sm:text-xs text-purple-200 uppercase font-black tracking-widest mt-1 opacity-75">1 Año</span>
                     </div>
 
-                    <!-- Cerdito con gorrito/audífonos Morado (Representa al chico) -->
                     <div class="flex flex-col items-center group cursor-pointer" onclick="piggySqueak('pig2')">
                         <div class="relative">
                             <svg class="w-32 h-32 sm:w-40 sm:h-40 drop-shadow-[0_10px_20px_rgba(168,85,247,0.3)] transition-transform duration-300 group-hover:scale-110" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Orejas -->
                                 <path d="M45 65C30 35 60 25 75 45L45 65Z" fill="#f472b6"/>
                                 <path d="M50 60C40 40 60 32 68 47L50 60Z" fill="#fda4af"/>
                                 <path d="M155 65C170 35 140 25 125 45L155 65Z" fill="#f472b6"/>
                                 <path d="M150 60C160 40 140 32 132 47L150 60Z" fill="#fda4af"/>
-                                <!-- Cabeza cuerpo -->
+                               
                                 <ellipse cx="100" cy="115" rx="75" ry="65" fill="#fbcfe8"/>
                                 <ellipse cx="100" cy="118" rx="70" ry="60" fill="#f472b6"/>
-                                <!-- Chapitas -->
+                               
                                 <circle cx="55" cy="122" r="14" fill="#fb7185" opacity="0.6"/>
                                 <circle cx="145" cy="122" r="14" fill="#fb7185" opacity="0.6"/>
-                                <!-- Ojos tiernos guiñando un ojo -->
+                               
                                 <path d="M60 98 Q68 90 76 98" stroke="#1e1b4b" stroke-width="4" stroke-linecap="round"/>
                                 <circle cx="132" cy="98" r="9" fill="#1e1b4b"/>
                                 <circle cx="135" cy="95" r="3.5" fill="#ffffff"/>
-                                <!-- Hocico -->
+                               
                                 <rect x="75" y="105" width="50" height="36" rx="18" fill="#fda4af"/>
                                 <ellipse cx="88" cy="123" rx="4" ry="7" fill="#be185d"/>
                                 <ellipse cx="112" cy="123" rx="4" ry="7" fill="#be185d"/>
-                                <!-- Audífonos Gamer Morados (Color del chico) -->
+                               
                                 <path d="M40 90 A 62 62 0 0 1 160 90" stroke="#a855f7" stroke-width="8" stroke-linecap="round" fill="none"/>
                                 <rect x="30" y="80" width="16" height="32" rx="8" fill="#7e22ce" stroke="#c084fc" stroke-width="2"/>
                                 <rect x="154" y="80" width="16" height="32" rx="8" fill="#7e22ce" stroke="#c084fc" stroke-width="2"/>
-                                <!-- Bloque Morado de Roblox -->
                                 <rect x="143" y="145" width="22" height="22" rx="4" fill="#a855f7" stroke="#ffffff" stroke-width="2"/>
                             </svg>
                         </div>
@@ -252,10 +238,109 @@
                 </div>
             </div>
 
-            <!-- Botón sorpresa rápido -->
-            <button onclick="launchLoveRain()" class="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-bubble text-base sm:text-lg font-bold shadow-xl hover:shadow-cyan-500/30 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2">
-                <span>🐷 Presiona para recibir amor 💜</span>
-            </button>
+            <!-- ARCADE DEL AMOR -->
+            <div class="mt-8 w-full max-w-2xl">
+                <div class="glass-panel p-2 rounded-2xl flex flex-wrap justify-center gap-2 mb-4 border border-white/20 shadow-xl">
+                    <button id="tabGachaBtn" onclick="switchLoveMode('gacha')" class="love-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bubble font-bold transition-all flex items-center gap-1.5 bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-md">
+                        🎰 Máquina de la Fortuna
+                    </button>
+                    <button id="tabBalloonsBtn" onclick="switchLoveMode('balloons')" class="love-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bubble font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-white/10">
+                        🎈 Cerditos Voladores
+                    </button>
+                    <button id="tabEnergyBtn" onclick="switchLoveMode('energy')" class="love-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bubble font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-white/10">
+                        ⚡ Medidor de Amor Roblox
+                    </button>
+                </div>
+
+                <!-- MODO 1 -->
+                <div id="modeGacha" class="glass-panel rounded-3xl p-6 sm:p-8 text-center border-2 border-sky-400/30 relative overflow-hidden">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
+                        <span>🐷</span> Gira los rodillos y gana un premio real <span>✨</span>
+                    </div>
+                    <h3 class="text-2xl font-bubble font-bold text-white mb-2">Tragamonedas del Destino</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm mb-5">
+                        Jala la palanca. Cada tirada siempre es una victoria para nosotros
+                    </p>
+
+                    <div class="flex items-center justify-center gap-3 sm:gap-4 my-4">
+                        <div class="w-16 h-20 sm:w-20 sm:h-24 glass-card rounded-2xl border-2 border-sky-400 flex items-center justify-center text-3xl sm:text-4xl shadow-inner bg-slate-900/60 transition-transform" id="slot1">
+                            🐷
+                        </div>
+                        <div class="w-16 h-20 sm:w-20 sm:h-24 glass-card rounded-2xl border-2 border-purple-400 flex items-center justify-center text-3xl sm:text-4xl shadow-inner bg-slate-900/60 transition-transform" id="slot2">
+                            💙
+                        </div>
+                        <div class="w-16 h-20 sm:w-20 sm:h-24 glass-card rounded-2xl border-2 border-pink-400 flex items-center justify-center text-3xl sm:text-4xl shadow-inner bg-slate-900/60 transition-transform" id="slot3">
+                            💜
+                        </div>
+                    </div>
+
+                    <button id="spinLeverBtn" onclick="spinLoveSlots()" class="mt-4 px-8 py-3.5 rounded-full bg-gradient-to-r from-sky-400 via-indigo-500 to-purple-600 text-white font-bubble font-bold text-base sm:text-lg shadow-xl shadow-indigo-500/30 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 mx-auto">
+                        <span id="leverIcon">🕹️</span> Jalar Palanca de Amor
+                    </button>
+
+                    <div id="prizeVoucher" class="hidden mt-6 p-4 rounded-2xl bg-gradient-to-r from-sky-950/80 to-purple-950/80 border-2 border-dashed border-sky-300/60 text-left relative animate-bounce">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl" id="voucherIcon">🎟️</span>
+                            <div>
+                                <span class="text-[10px] uppercase tracking-widest text-pink-300 font-bold font-bubble">Vale Oficial Canjeable #1erAniversario</span>
+                                <h4 id="voucherTitle" class="text-white font-bubble font-bold text-base sm:text-lg">Vale por una sesión ilimitada de Roblox con snacks</h4>
+                                <p id="voucherDesc" class="text-xs text-sky-200 mt-0.5">Válido hoy, mañana y siempre que lo pidas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODO 2 -->
+                <div id="modeBalloons" class="hidden glass-panel rounded-3xl p-6 sm:p-8 text-center border-2 border-purple-400/30 relative overflow-hidden">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">
+                        <span>🎈</span> Minijuego: Revienta los globos <span>🐷</span>
+                    </div>
+                    <h3 class="text-2xl font-bubble font-bold text-white mb-2">Cerditos en Paracaídas</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm mb-4">
+                        Lanza la bandada de cerditos voladores y haz clic sobre ellos antes de que se escapen al espacio
+                    </p>
+
+                    <button onclick="launchFloatingPiggies()" class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bubble font-bold text-sm sm:text-base shadow-lg hover:scale-105 active:scale-95 transition-all duration-300">
+                        🚀 Soltar Cerditos Flotantes
+                    </button>
+
+                    <div id="balloonStats" class="mt-4 text-xs font-bold text-purple-200">
+                        Cerditos atrapados: <span id="poppedCount" class="text-sky-300 text-sm">0</span>
+                    </div>
+
+                    <div id="balloonToast" class="mt-3 min-h-[32px] text-xs sm:text-sm font-bubble text-pink-300 italic">
+                        Haz clic en el botón para que comiencen a flotar...
+                    </div>
+                </div>
+
+                <!-- MODO 3 -->
+                <div id="modeEnergy" class="hidden glass-panel rounded-3xl p-6 sm:p-8 text-center border-2 border-pink-400/30 relative overflow-hidden">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold uppercase tracking-wider mb-3">
+                        <span>⚡</span> Clicker de Energía Roblox <span>💖</span>
+                    </div>
+                    <h3 class="text-2xl font-bubble font-bold text-white mb-2">Medidor de Amor Nivel Máximo</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm mb-4">
+                        Toca el botón rápidamente para cargar la batería de amor al 100% y reclamar tu Insignia de Pareja Legendaria.
+                    </p>
+
+                    <div class="w-full bg-slate-900/80 rounded-full h-7 p-1 border-2 border-white/20 mb-3 shadow-inner relative overflow-hidden">
+                        <div id="loveBarFill" class="bg-gradient-to-r from-sky-400 via-indigo-500 to-pink-500 h-full rounded-full transition-all duration-200 flex items-center justify-end pr-2 text-[10px] font-black text-white" style="width: 15%;">
+                            <span id="loveBarPercent">15%</span>
+                        </div>
+                    </div>
+
+                    <button id="chargeLoveBtn" onclick="tapLoveEnergy()" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-bubble font-black text-base shadow-xl active:scale-90 hover:scale-105 transition-transform flex items-center justify-center gap-2 mx-auto">
+                        <span>💖 ¡Click para llenar amor! (+15)</span>
+                    </button>
+
+                    <div id="diplomaUnlocked" class="hidden mt-6 p-5 rounded-2xl bg-gradient-to-br from-indigo-900/90 to-purple-950/90 border-2 border-amber-300 text-center relative shadow-2xl animate-fade-in">
+                        <span class="text-4xl">🏆</span>
+                        <h4 class="text-amber-300 font-bubble font-black text-lg sm:text-xl mt-1">INSIGNIA ROBLOX DESBLOQUEADA</h4>
+                        <p class="text-white text-xs sm:text-sm font-semibold mt-1">"La Compañera Mas Dulce del Servidor Terrestre"</p>
+                        <p class="text-[11px] text-slate-300 mt-2">Certificado oficial de amor eterno por cumplir 365 días juntos con éxito absoluto 💙🐷💜</p>
+                    </div>
+                </div>
+            </div>
         </header>
 
         <!-- SECCIÓN 2: CONTADOR EN TIEMPO REAL -->
@@ -272,22 +357,18 @@
 
             <!-- Grid de Contadores -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
-                <!-- Días -->
                 <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col items-center border-t-2 border-sky-400">
-                    <span id="countDays" class="text-3xl sm:text-5xl font-bubble font-black text-sky-300 tracking-tight">365</span>
+                    <span id="countDays" class="text-3xl sm:text-5xl font-bubble font-black text-sky-300 tracking-tight">0</span>
                     <span class="text-xs uppercase tracking-widest text-slate-400 font-bold mt-1">Días</span>
                 </div>
-                <!-- Horas -->
                 <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col items-center border-t-2 border-indigo-400">
                     <span id="countHours" class="text-3xl sm:text-5xl font-bubble font-black text-indigo-300 tracking-tight">00</span>
                     <span class="text-xs uppercase tracking-widest text-slate-400 font-bold mt-1">Horas</span>
                 </div>
-                <!-- Minutos -->
                 <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col items-center border-t-2 border-purple-400">
                     <span id="countMinutes" class="text-3xl sm:text-5xl font-bubble font-black text-purple-300 tracking-tight">00</span>
                     <span class="text-xs uppercase tracking-widest text-slate-400 font-bold mt-1">Minutos</span>
                 </div>
-                <!-- Segundos -->
                 <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col items-center border-t-2 border-pink-400">
                     <span id="countSeconds" class="text-3xl sm:text-5xl font-bubble font-black text-pink-300 tracking-tight">00</span>
                     <span class="text-xs uppercase tracking-widest text-slate-400 font-bold mt-1">Segundos</span>
@@ -299,71 +380,66 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 3: NUESTRA HISTORIA BLOQUE A BLOQUE (TIMELINE) -->
+        <!-- SECCIÓN 3: TIMELINE -->
         <section>
             <div class="text-center mb-12">
                 <span class="text-xs sm:text-sm font-bold tracking-widest text-sky-400 uppercase bg-sky-950/40 px-3 py-1 rounded-full border border-sky-500/20">Modo Historia</span>
                 <h2 class="text-3xl sm:text-4xl font-bubble font-bold text-white mt-3">
-                    Nuestra Aventura Bloque a Bloque 🗺️
+                    Nuestra Aventura Bloque a Bloque 
                 </h2>
                 <p class="text-slate-300 text-sm max-w-lg mx-auto mt-2">
-                    De dos desconocidos jugando juntos en línea al amor más real e incondicional.
+                    De dos desconocidos jugando juntos en línea al amor más real e incondicional
                 </p>
             </div>
 
-            <!-- Timeline Container -->
             <div class="relative max-w-3xl mx-auto px-4">
-                <!-- Línea vertical conectora -->
                 <div class="absolute left-8 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-sky-400 via-indigo-500 to-purple-500 transform -translate-x-1/2 rounded-full opacity-60"></div>
 
-                <!-- Cap 1: El Spawn Inicial -->
+                <!-- Cap 1 -->
                 <div class="relative flex flex-col md:flex-row items-center mb-12 group">
                     <div class="flex items-center justify-start md:justify-end w-full md:w-1/2 pl-14 md:pl-0 md:pr-10 order-2 md:order-1">
                         <div class="glass-panel p-6 rounded-2xl border-l-4 border-sky-400 text-left md:text-right hover:border-sky-300 transition-all duration-300 hover:scale-[1.02]">
                             <div class="text-sky-400 font-bubble text-xs tracking-wider uppercase mb-1">Hace 1 Año Exacto</div>
                             <h3 class="text-xl font-bold font-bubble text-white">Capítulo 1: El Primer Spawn 🎮</h3>
                             <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-                                Coincidimos en Roblox sin sospechar lo que el destino tenía planeado. Entre misiones, risas espontáneas por chat y partidas tontas, comenzamos siendo dos buenos amigos que se divertían sin parar.
+                                Coincidimos en Roblox sin sospechar lo que el destino tenía planeado, entre misiones, risas espontáneas por chat y partidas tontas, comenzamos siendo dos buenos amigos en vecinos y roba un braintrot, que se divertían sin parar
                             </p>
                         </div>
                     </div>
-                    <!-- Icono central -->
                     <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-sky-400 flex items-center justify-center text-lg z-10 shadow-lg shadow-sky-500/50">
                         🕹️
                     </div>
                     <div class="w-full md:w-1/2 order-1 md:order-2"></div>
                 </div>
 
-                <!-- Cap 2: Más que amigos -->
+                <!-- Cap 2 -->
                 <div class="relative flex flex-col md:flex-row items-center mb-12 group">
                     <div class="w-full md:w-1/2 order-1"></div>
-                    <!-- Icono central -->
                     <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-indigo-400 flex items-center justify-center text-lg z-10 shadow-lg shadow-indigo-500/50">
                         💬
                     </div>
                     <div class="flex items-center justify-start w-full md:w-1/2 pl-14 md:pl-10 order-2">
                         <div class="glass-panel p-6 rounded-2xl border-l-4 md:border-l-0 md:border-r-4 border-indigo-400 text-left hover:border-indigo-300 transition-all duration-300 hover:scale-[1.02]">
                             <div class="text-indigo-300 font-bubble text-xs tracking-wider uppercase mb-1">La Chispa</div>
-                            <h3 class="text-xl font-bold font-bubble text-white">Capítulo 2: Más que Amigos 💭</h3>
+                            <h3 class="text-xl font-bold font-bubble text-white">Capítulo 2: Más que Amigos </h3>
                             <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-                                Las partidas ya no eran solo por jugar: el pretexto era escucharnos. Las llamadas se volvieron de horas enteras, nos contábamos nuestros días y ese cariño de amigos floreció en un amor sincero y mágico.
+                                Las partidas ya no eran solo por jugar: el pretexto era hacer llamadas y se volvieron de horas enteras, nos contábamos muchas cosas, nos fuimos conociendo mas y mas cada dia y ese cariño de amigos floreció en un amor sincero y magico
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Cap 3: Hoy 365 días -->
+                <!-- Cap 3 -->
                 <div class="relative flex flex-col md:flex-row items-center group">
                     <div class="flex items-center justify-start md:justify-end w-full md:w-1/2 pl-14 md:pl-0 md:pr-10 order-2 md:order-1">
                         <div class="glass-panel p-6 rounded-2xl border-l-4 border-purple-400 text-left md:text-right hover:border-purple-300 transition-all duration-300 hover:scale-[1.02]">
                             <div class="text-purple-300 font-bubble text-xs tracking-wider uppercase mb-1">Hoy y Siempre</div>
-                            <h3 class="text-xl font-bold font-bubble text-white">Capítulo 3: Nuestro Primer Aniversario 👑</h3>
+                            <h3 class="text-xl font-bold font-bubble text-white">Capítulo 3: Nuestro Primer Aniversario</h3>
                             <p class="text-slate-300 text-sm mt-2 leading-relaxed">
-                                365 días después, confirmo que encontrarte fue mi mayor logro desbloqueado. Mi morado favorito encontró a su cerdita del azul más lindo, y este es solo el prólogo de nuestra historia.
+                                365 días después, confirmo que encontrarte fue mi mayor logro desbloqueado. Mi morado encontró a su cerdita del azul más lindo, y este es solo el inicio de nuestra historia. Te amo :)
                             </p>
                         </div>
                     </div>
-                    <!-- Icono central -->
                     <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-2 border-purple-400 flex items-center justify-center text-lg z-10 shadow-lg shadow-purple-500/50">
                         🐷
                     </div>
@@ -372,39 +448,32 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 4: EL CERDITO INTERACTIVO DE LOS MENSAJES -->
+        <!-- SECCIÓN 4: EL CERDITO INTERACTIVO -->
         <section class="glass-panel rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden">
             <h2 class="text-3xl font-bubble font-bold text-sky-200 mb-2">
                 El Cerdito de los Mensajitos Secretos 💌
             </h2>
             <p class="text-slate-300 text-sm max-w-md mx-auto mb-6">
-                Haz clic en el cerdito para que te revele una razón por la que te adoro o un recuerdo especial.
+                Haz clic en el cerdito para que te revele una razón por la que te adoro o un recuerdo especial
             </p>
 
             <div class="flex flex-col items-center justify-center">
-                <!-- Cerdito clickable con animación -->
                 <button id="piggyClicker" onclick="triggerPiggyLove()" class="focus:outline-none transform transition active:scale-90 hover:scale-110 relative p-4 group">
                     <div class="absolute -top-3 right-2 text-2xl transition-opacity animate-bounce">
                         ✨
                     </div>
                     <svg class="w-36 h-36 sm:w-44 sm:h-44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Orejas -->
                         <path d="M40 70C25 40 55 30 70 50L40 70Z" fill="#f472b6"/>
                         <path d="M160 70C175 40 145 30 130 50L160 70Z" fill="#f472b6"/>
-                        <!-- Cuerpo gordito -->
                         <circle cx="100" cy="115" r="70" fill="#fbcfe8"/>
                         <circle cx="100" cy="118" r="65" fill="#f472b6"/>
-                        <!-- Mejillas -->
                         <circle cx="56" cy="120" r="14" fill="#fb7185" opacity="0.7"/>
                         <circle cx="144" cy="120" r="14" fill="#fb7185" opacity="0.7"/>
-                        <!-- Ojos felices cerraditos (arcos) -->
                         <path d="M60 98 Q70 85 80 98" stroke="#1e1b4b" stroke-width="5" stroke-linecap="round"/>
                         <path d="M120 98 Q130 85 140 98" stroke="#1e1b4b" stroke-width="5" stroke-linecap="round"/>
-                        <!-- Hocico -->
                         <rect x="75" y="105" width="50" height="36" rx="18" fill="#fda4af"/>
                         <ellipse cx="88" cy="123" rx="4" ry="7" fill="#be185d"/>
                         <ellipse cx="112" cy="123" rx="4" ry="7" fill="#be185d"/>
-                        <!-- Corazón en la barriguita -->
                         <path d="M100 148 C95 142 85 145 85 152 C85 160 100 168 100 168 C100 168 115 160 115 152 C115 145 105 142 100 148 Z" fill="#38bdf8"/>
                     </svg>
                     <span class="inline-block mt-1 text-xs font-bold text-sky-300 bg-sky-950/70 border border-sky-400/40 px-3 py-1 rounded-full group-hover:bg-sky-900 transition-colors">
@@ -412,16 +481,15 @@
                     </span>
                 </button>
 
-                <!-- Cuadro de texto donde cambia el mensajito -->
                 <div id="piggyMessageBox" class="mt-6 w-full max-w-lg glass-card p-5 rounded-2xl border border-purple-400/30 min-h-[90px] flex items-center justify-center transition-all duration-300">
                     <p id="piggyMessageText" class="text-sm sm:text-base font-bubble text-purple-200">
-                        "¡Oink! Haz clic sobre mí y te daré un abrazo lleno de razones por las que te amo."
+                        "¡Oink! Haz clic sobre mí y te daré un abrazo lleno de razones por las que te amo"
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 5: RECUERDOS Y TARJETAS VOLTEABLES (FLIP CARDS) -->
+        <!-- SECCIÓN 5: FLIP CARDS -->
         <section>
             <div class="text-center mb-8">
                 <span class="text-xs sm:text-sm font-bold tracking-widest text-purple-400 uppercase bg-purple-950/40 px-3 py-1 rounded-full border border-purple-500/20">Álbum Digital</span>
@@ -433,19 +501,16 @@
                 </p>
             </div>
 
-            <!-- Grid de 3 tarjetas volteables -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Tarjeta 1 -->
                 <div class="flip-card h-64 cursor-pointer" onclick="flipCard(this)">
                     <div class="flip-inner relative w-full h-full rounded-2xl shadow-xl">
-                        <!-- Frente -->
                         <div class="flip-front absolute inset-0 w-full h-full glass-panel rounded-2xl p-6 flex flex-col items-center justify-center border-t-2 border-sky-400 text-center">
                             <span class="text-5xl mb-4">🎮</span>
                             <h3 class="font-bubble text-lg font-bold text-sky-200">El Dúo Dinámico</h3>
                             <p class="text-xs text-slate-300 mt-2">Nadie me acompaña tan bien en cada partida como tú.</p>
                             <span class="mt-4 text-[11px] text-sky-400 font-bold tracking-wider uppercase">Toca para voltear 🔄</span>
                         </div>
-                        <!-- Reverso -->
                         <div class="flip-back absolute inset-0 w-full h-full bg-gradient-to-br from-sky-900 to-indigo-950 rounded-2xl p-6 flex flex-col items-center justify-center text-center border border-sky-400/40">
                             <span class="text-3xl mb-2">💎</span>
                             <p class="text-sm text-slate-200 font-medium">
@@ -458,14 +523,12 @@
                 <!-- Tarjeta 2 -->
                 <div class="flip-card h-64 cursor-pointer" onclick="flipCard(this)">
                     <div class="flip-inner relative w-full h-full rounded-2xl shadow-xl">
-                        <!-- Frente -->
                         <div class="flip-front absolute inset-0 w-full h-full glass-panel rounded-2xl p-6 flex flex-col items-center justify-center border-t-2 border-purple-400 text-center">
                             <span class="text-5xl mb-4">🐷</span>
                             <h3 class="font-bubble text-lg font-bold text-purple-200">Tu Amor Por Los Cerditos</h3>
                             <p class="text-xs text-slate-300 mt-2">La ternura que tienes es lo que más me fascina.</p>
                             <span class="mt-4 text-[11px] text-purple-400 font-bold tracking-wider uppercase">Toca para voltear 🔄</span>
                         </div>
-                        <!-- Reverso -->
                         <div class="flip-back absolute inset-0 w-full h-full bg-gradient-to-br from-purple-900 to-slate-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center border border-purple-400/40">
                             <span class="text-3xl mb-2">🌸</span>
                             <p class="text-sm text-slate-200 font-medium">
@@ -478,14 +541,12 @@
                 <!-- Tarjeta 3 -->
                 <div class="flip-card h-64 cursor-pointer" onclick="flipCard(this)">
                     <div class="flip-inner relative w-full h-full rounded-2xl shadow-xl">
-                        <!-- Frente -->
                         <div class="flip-front absolute inset-0 w-full h-full glass-panel rounded-2xl p-6 flex flex-col items-center justify-center border-t-2 border-pink-400 text-center">
                             <span class="text-5xl mb-4">💜💙</span>
                             <h3 class="font-bubble text-lg font-bold text-pink-200">Nuestros Colores</h3>
                             <p class="text-xs text-slate-300 mt-2">Azul y morado: la combinación perfecta.</p>
                             <span class="mt-4 text-[11px] text-pink-400 font-bold tracking-wider uppercase">Toca para voltear 🔄</span>
                         </div>
-                        <!-- Reverso -->
                         <div class="flip-back absolute inset-0 w-full h-full bg-gradient-to-br from-indigo-950 to-purple-950 rounded-2xl p-6 flex flex-col items-center justify-center text-center border border-pink-400/40">
                             <span class="text-3xl mb-2">🌌</span>
                             <p class="text-sm text-slate-200 font-medium">
@@ -497,10 +558,9 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 6: CARTA DE AMOR SINCERA -->
+        <!-- SECCIÓN 6: CARTA DE AMOR -->
         <section class="max-w-2xl mx-auto w-full">
             <div class="glass-panel rounded-3xl p-8 sm:p-12 relative border border-white/20 shadow-2xl">
-                <!-- Decoración sello de cera cerdito -->
                 <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg border-2 border-white/40 text-xl">
                     🐷
                 </div>
@@ -515,20 +575,20 @@
                         <strong class="text-sky-300 font-bold font-bubble text-lg">Mi niña hermosa,</strong>
                     </p>
                     <p>
-                        Hace exactamente 365 días entramos a un mismo servidor en Roblox sin tener idea de cómo cambiaría todo. Empezamos siendo amigos, compartiendo partidas, bromas y anécdotas, pero poco a poco tu risa empezó a ser mi sonido favorito de cada día.
+                        Hace exactamente 365 días entramos a un mismo servidor en Roblox sin tener idea de cómo cambiaría todo. Empezamos siendo amigos, compartiendo partidas, bromas y anécdotas, pero poco a poco tu risa empezó a ser mi sonido favorito de cada día
                     </p>
                     <p>
-                        Sin darme cuenta, ya no me conectaba solo por el juego; me conectaba para saber de ti, para cuidarte y para compartir el mundo contigo. Así fue creciendo este amor que hoy llena cada rincón de mi vida.
+                        Sin darme cuenta, los juegos eran cosa aparte, me conectaba solo  para saber de ti, para cuidarte y para compartir el mundo contigo. Así fue creciendo este amor que hoy llena cada rincón de mi vida
                     </p>
                     <p>
-                        Amo que te vuelvan loca los cerditos más tiernos, amo tu color azul y cómo se complementa tan bonito con mi morado. Gracias por este primer año lleno de paciencia, complicidad, risas y cariño sincero.
+                        Amo que te vuelvan loca los cerditos, amo tu color azul y cómo se complementa tan bonito con mi morado, amo tu pelo naranja, amo tu sonrisa. amo tu risa, amo tu manera de ser, amo como eres y es por eso que me enamore ciegamente de ti 
                     </p>
                     <p class="text-right pt-4 text-purple-300 font-bubble text-lg font-bold">
-                        Siempre tuyo, feliz 1er aniversario. 💙💜
+                        Siempre tuyo, feliz 1er aniversario preciosa 💙💜
                     </p>
                 </div>
 
-                <!-- Botón de lluvia masiva final -->
+                <!-- Botón de lluvia masiva final con visor de fotos -->
                 <div class="text-center mt-8 pt-6 border-t border-white/10">
                     <button onclick="launchMegaCelebration()" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-sky-400 via-purple-500 to-pink-500 text-white font-bubble font-bold text-lg shadow-xl shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
                         🎉 ¡Celebrar Nuestro Amor! 🎉
@@ -545,10 +605,51 @@
 
     </main>
 
+    <!-- MODAL / CARRUSEL DE IMÁGENES SECUENCIAL -->
+    <div id="memoriesModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-lg glass-panel rounded-3xl p-5 sm:p-6 border-2 border-pink-400/50 shadow-2xl flex flex-col items-center">
+            
+            <!-- Botón cerrar modal -->
+            <button onclick="closeMemoriesModal()" class="absolute top-4 right-4 text-slate-300 hover:text-white bg-white/10 hover:bg-white/20 rounded-full w-9 h-9 flex items-center justify-center text-lg font-bold transition">
+                ✕
+            </button>
+
+            <!-- Encabezado del visor -->
+            <div class="text-center mb-3">
+                <span class="text-xs uppercase tracking-widest text-pink-300 font-bold font-bubble">Álbum de Nuestro Amor</span>
+                <h3 id="memoryTitle" class="text-xl sm:text-2xl font-bubble font-bold text-white">Nuestros Recuerdos</h3>
+                <p id="memoryCaption" class="text-xs sm:text-sm text-sky-200 mt-1 max-w-sm"></p>
+            </div>
+
+            <!-- Contenedor de Imagen -->
+            <div class="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-900/80 border border-white/20 flex items-center justify-center group shadow-inner">
+                <img id="memoryImg" src="" alt="Recuerdo de amor" class="w-full h-full object-contain transition-opacity duration-300">
+                
+                <!-- Botón Anterior -->
+                <button onclick="prevMemory()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition active:scale-90">
+                    ❮
+                </button>
+                <!-- Botón Siguiente -->
+                <button onclick="nextMemory()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full w-10 h-10 flex items-center justify-center text-xl transition active:scale-90">
+                    ❯
+                </button>
+            </div>
+
+            <!-- Barra de navegación e indicador -->
+            <div class="w-full flex items-center justify-between text-xs text-slate-400 font-bubble mt-4 px-2">
+                <span id="memoryCounter">Foto 1 de 10</span>
+                <div class="flex gap-1.5" id="memoryDots"></div>
+                <button id="memoryPlayPauseBtn" onclick="toggleMemoryAutoPlay()" class="text-xs px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-sky-300">
+                    ⏸ Pausar
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- LOGICA JAVASCRIPT -->
     <script>
         /* ----------------------------------------------------
-           1. Generación de Partículas Flotantes (Azul y Morado)
+           1. Partículas Flotantes
            ---------------------------------------------------- */
         const particlesContainer = document.getElementById('particles-container');
         const particleIcons = ['💙', '💜', '🐷', '✨', '⭐', '🌸'];
@@ -569,16 +670,15 @@
         createParticles();
 
         /* ----------------------------------------------------
-           2. Contador de Tiempo (Exactamente 1 Año / 365 Días)
-           Calcula 365 días transcurridos + el tiempo que corre hoy
+           2. Contador de Tiempo Exacto (Inicio: 2 de Noviembre de 2025)
            ---------------------------------------------------- */
-        // Fecha simulada de inicio: exactamente hace 365 días desde el instante actual
-        const now = new Date();
-        const anniversaryStartDate = new Date(now.getTime() - (365 * 24 * 60 * 60 * 1000));
+        const anniversaryStartDate = new Date('2025-11-02T00:00:00');
 
         function updateLiveCounter() {
             const current = new Date();
             const diffMs = current - anniversaryStartDate;
+
+            if (diffMs < 0) return;
 
             const totalSeconds = Math.floor(diffMs / 1000);
             const days = Math.floor(totalSeconds / (3600 * 24));
@@ -598,21 +698,18 @@
            3. Cerdito de los Mensajes Interactivos
            ---------------------------------------------------- */
         const piggyMessages = [
-            "🐷 'Razón #1: La forma tan linda en que te ríes cuando jugamos juntos.'",
-            "💙 'Razón #2: Tu paciencia y cómo tus mensajitos siempre me alegran el día.'",
-            "💜 'Razón #3: Mi color morado nunca se vio tan bien como cuando está al lado de tu azul.'",
-            "🎮 'Razón #4: Aquella primera partida en Roblox donde comenzó la mejor historia de mi vida.'",
-            "🌸 'Razón #5: Eres mi lugar seguro, mi cerdita favorita y mi persona favorita en el mundo.'",
-            "✨ 'Razón #6: Cada llamada contigo hace que el tiempo vuele y nunca quiera colgar.'",
-            "🐷 'Razón #7: Prometo darte cariñitos, abrazos y apoyo en cada nivel que nos toque pasar.'"
+            "🐷 'Razón #1: esa risita tan linda que haces cuando jugamos juntos'",
+            "💙 'Razón #2: Tu amor y cómo tus mensajitos siempre me alegran el día'",
+            "💜 'Razón #3: Mi color morado nunca se vio tan bien como cuando está al lado de tu azul'",
+            "🎮 'Razón #4: aquel servidor de vecinos donde comenzó la mejor historia de mi vida'",
+            "🌸 'Razón #5: Eres mi lugar seguro, mi chikita hermosa y mi persona favorita en el mundo'",
+            "✨ 'Razón #6: Cada llamada contigo hace que el tiempo vuele y nunca quiera colgar'",
+            "🐷 'Razón #7: Prometo darte cariñitos, abrazos y apoyo en cada nivel que nos toque pasar'"
         ];
         let messageIndex = 0;
 
         function triggerPiggyLove() {
-            // Sonido dulce interactivo con Web Audio API
             playCuteChime();
-
-            // Explosión pequeña de confetti de corazones
             confetti({
                 particleCount: 25,
                 spread: 60,
@@ -620,9 +717,7 @@
                 colors: ['#38bdf8', '#a855f7', '#f472b6', '#ffffff']
             });
 
-            // Rotar mensaje
             messageIndex = (messageIndex + 1) % piggyMessages.length;
-            const messageBox = document.getElementById('piggyMessageBox');
             const messageText = document.getElementById('piggyMessageText');
 
             messageText.style.opacity = '0';
@@ -641,43 +736,133 @@
         }
 
         /* ----------------------------------------------------
-           5. Efectos de Confeti Masivos
+           5. Galería / Carrusel Secuencial de Recuerdos
            ---------------------------------------------------- */
-        function launchLoveRain() {
-            playCuteChime();
-            confetti({
-                particleCount: 80,
-                spread: 90,
-                origin: { y: 0.4 },
-                colors: ['#38bdf8', '#a855f7', '#f472b6', '#60a5fa']
+        const memories = [
+            { src: '114845.jpg', title: 'Te Quiero Mucho Amor 🐷💖', caption: 'Nuestro dibujo de cerdito y corazones en el pizarrón de Roblox' },
+            { src: '114839.jpg', title: 'Nuestro Corazón Rosa 🌸', caption: 'Juntos dentro del corazón con un "Te amo"' },
+            { src: '114848.jpg', title: 'Dúo Enamorados 🖤', caption: 'Feernandoc & Caracipote en nuestra banquita favorita' },
+            { src: '114846.jpg', title: 'Xime ama a Fer 💌', caption: 'Nuestros mensajes escritos en el corazón del mapa' },
+            { src: '114842.jpg', title: 'Linternas al Infinito 🏮', caption: 'Por siempre y para siempre mi Fersito, amor de mi vida' },
+            { src: '114835.jpg', title: 'Cerditos Rosas a Juego 🐷', caption: 'Con nuestros gorritos gemelos listos para la partida' },
+            { src: '114843.jpg', title: 'Tu Cerdito con Chaqueta 95 🚗', caption: 'En la granja rodeado de los cerditos más tiernos' },
+            { src: '114840.jpg', title: 'Los Cerditos Novios 💒', caption: 'Sweet Baby Piggy-Love: nosotros dos en versión peluche' },
+            { src: '114868.jpg', title: 'Tu Cerdito de Chiquito 💙', caption: 'Desde niño listo para encontrarte y amarte' },
+            { src: '114867.jpg', title: 'Mi Abejita Hermosa 🐝💜', caption: 'La niña más dulce y preciosa de todo el universo' }
+        ];
+
+        let currentMemoryIndex = 0;
+        let memorySlideInterval = null;
+        let isMemoryAutoPlaying = true;
+
+        function showMemory(index) {
+            currentMemoryIndex = (index + memories.length) % memories.length;
+            const data = memories[currentMemoryIndex];
+            
+            const img = document.getElementById('memoryImg');
+            img.style.opacity = '0';
+            
+            setTimeout(() => {
+                img.src = data.src;
+                document.getElementById('memoryTitle').innerText = data.title;
+                document.getElementById('memoryCaption').innerText = data.caption;
+                document.getElementById('memoryCounter').innerText = `Foto ${currentMemoryIndex + 1} de ${memories.length}`;
+                img.style.opacity = '1';
+                renderMemoryDots();
+            }, 150);
+        }
+
+        function renderMemoryDots() {
+            const container = document.getElementById('memoryDots');
+            container.innerHTML = '';
+            memories.forEach((_, idx) => {
+                const dot = document.createElement('span');
+                dot.className = `w-2 h-2 rounded-full transition-all cursor-pointer ${idx === currentMemoryIndex ? 'bg-pink-400 w-4' : 'bg-white/30'}`;
+                dot.onclick = () => { showMemory(idx); resetMemoryTimer(); };
+                container.appendChild(dot);
             });
         }
 
+        function nextMemory() {
+            showMemory(currentMemoryIndex + 1);
+            resetMemoryTimer();
+        }
+
+        function prevMemory() {
+            showMemory(currentMemoryIndex - 1);
+            resetMemoryTimer();
+        }
+
+        function startMemoryTimer() {
+            if (memorySlideInterval) clearInterval(memorySlideInterval);
+            memorySlideInterval = setInterval(() => {
+                if (isMemoryAutoPlaying) {
+                    showMemory(currentMemoryIndex + 1);
+                }
+            }, 3200);
+        }
+
+        function resetMemoryTimer() {
+            if (isMemoryAutoPlaying) {
+                startMemoryTimer();
+            }
+        }
+
+        function toggleMemoryAutoPlay() {
+            isMemoryAutoPlaying = !isMemoryAutoPlaying;
+            const btn = document.getElementById('memoryPlayPauseBtn');
+            btn.innerText = isMemoryAutoPlaying ? '⏸ Pausar' : '▶ Reanudar';
+            if (isMemoryAutoPlaying) startMemoryTimer();
+            else clearInterval(memorySlideInterval);
+        }
+
+        function openMemoriesModal() {
+            const modal = document.getElementById('memoriesModal');
+            modal.classList.remove('hidden');
+            showMemory(0);
+            isMemoryAutoPlaying = true;
+            document.getElementById('memoryPlayPauseBtn').innerText = '⏸ Pausar';
+            startMemoryTimer();
+        }
+
+        function closeMemoriesModal() {
+            const modal = document.getElementById('memoriesModal');
+            modal.classList.add('hidden');
+            if (memorySlideInterval) clearInterval(memorySlideInterval);
+        }
+
+        /* ----------------------------------------------------
+           6. Confeti Masivo y Activación del Modal
+           ---------------------------------------------------- */
         function launchMegaCelebration() {
             playCelebrationMelody();
-            const duration = 3 * 1000;
+            const duration = 3.5 * 1000;
             const end = Date.now() + duration;
 
             (function frame() {
                 confetti({
-                    particleCount: 4,
+                    particleCount: 5,
                     angle: 60,
-                    spread: 55,
+                    spread: 60,
                     origin: { x: 0 },
-                    colors: ['#38bdf8', '#a855f7', '#fb7185']
+                    colors: ['#38bdf8', '#a855f7', '#fb7185', '#ffffff']
                 });
                 confetti({
-                    particleCount: 4,
+                    particleCount: 5,
                     angle: 120,
-                    spread: 55,
+                    spread: 60,
                     origin: { x: 1 },
-                    colors: ['#38bdf8', '#a855f7', '#fb7185']
+                    colors: ['#38bdf8', '#a855f7', '#fb7185', '#ffffff']
                 });
 
                 if (Date.now() < end) {
                     requestAnimationFrame(frame);
                 }
             }());
+
+            setTimeout(() => {
+                openMemoriesModal();
+            }, 500);
         }
 
         function piggySqueak(type) {
@@ -691,12 +876,11 @@
         }
 
         /* ----------------------------------------------------
-           6. Sintetizador de Sonidos Románticos (Web Audio API)
-           Sin depender de URLs externas que puedan fallar
+           7. Control de Canción (Jorge Cuellar - AYAYAY)
            ---------------------------------------------------- */
         let audioCtx = null;
         let isMusicPlaying = false;
-        let melodyInterval = null;
+        const romanticAudio = document.getElementById('romanticAudio');
 
         function getAudioContext() {
             if (!audioCtx) {
@@ -708,7 +892,6 @@
             return audioCtx;
         }
 
-        // Tono suave tipo campana dulce
         function playCuteChime() {
             try {
                 const ctx = getAudioContext();
@@ -717,8 +900,8 @@
                 const gain = ctx.createGain();
 
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(523.25, now); // C5
-                osc.frequency.exponentialRampToValueAtTime(880, now + 0.15); // A5
+                osc.frequency.setValueAtTime(523.25, now);
+                osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
 
                 gain.gain.setValueAtTime(0.2, now);
                 gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
@@ -728,9 +911,7 @@
 
                 osc.start(now);
                 osc.stop(now + 0.4);
-            } catch(e) {
-                console.log("Audio not allowed yet");
-            }
+            } catch(e) {}
         }
 
         function playSoftPop() {
@@ -741,7 +922,7 @@
                 const gain = ctx.createGain();
 
                 osc.type = 'triangle';
-                osc.frequency.setValueAtTime(329.63, now); // E4
+                osc.frequency.setValueAtTime(329.63, now);
                 osc.frequency.exponentialRampToValueAtTime(440, now + 0.1);
 
                 gain.gain.setValueAtTime(0.15, now);
@@ -756,79 +937,247 @@
         }
 
         function playCelebrationMelody() {
-            const ctx = getAudioContext();
-            const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
-            notes.forEach((freq, idx) => {
-                setTimeout(() => {
-                    const now = ctx.currentTime;
-                    const osc = ctx.createOscillator();
-                    const gain = ctx.createGain();
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(freq, now);
-                    gain.gain.setValueAtTime(0.18, now);
-                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
-                    osc.start(now);
-                    osc.stop(now + 0.35);
-                }, idx * 110);
-            });
+            try {
+                const ctx = getAudioContext();
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((freq, idx) => {
+                    setTimeout(() => {
+                        const now = ctx.currentTime;
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, now);
+                        gain.gain.setValueAtTime(0.18, now);
+                        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start(now);
+                        osc.stop(now + 0.35);
+                    }, idx * 110);
+                });
+            } catch(e) {}
         }
 
-        /* Reproductor de Melodía Lo-Fi Suave de Fondo */
         const musicToggleBtn = document.getElementById('musicToggleBtn');
         const musicIcon = document.getElementById('musicIcon');
         const musicText = document.getElementById('musicText');
 
-        // Notas de una melodía ambiental romántica (Pentatónica suave)
-        const lullabyNotes = [
-            392.00, 440.00, 523.25, 587.33, 659.25, 587.33, 523.25, 440.00,
-            349.23, 392.00, 440.00, 523.25, 440.00, 392.00, 329.63, 392.00
-        ];
-        let noteStep = 0;
-
-        function startAmbientMelody() {
-            const ctx = getAudioContext();
-            melodyInterval = setInterval(() => {
-                if (!isMusicPlaying) return;
-                const freq = lullabyNotes[noteStep % lullabyNotes.length];
-                noteStep++;
-
-                const now = ctx.currentTime;
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(freq, now);
-
-                // Volumen muy suave y agradable para acompañar la lectura
-                gain.gain.setValueAtTime(0.05, now);
-                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
-
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-
-                osc.start(now);
-                osc.stop(now + 0.75);
-            }, 650);
-        }
-
         musicToggleBtn.addEventListener('click', () => {
             getAudioContext();
             if (!isMusicPlaying) {
-                isMusicPlaying = true;
-                musicIcon.innerText = '🎶';
-                musicText.innerText = 'Melodía: Activada';
-                musicToggleBtn.classList.add('border-sky-400');
-                startAmbientMelody();
+                romanticAudio.play().then(() => {
+                    isMusicPlaying = true;
+                    musicIcon.innerText = '🎶';
+                    musicText.innerText = 'AYAYAY: Sonando';
+                    musicToggleBtn.classList.add('border-pink-400');
+                }).catch(() => {
+                    alert("Asegúrate de guardar el archivo 'Jorge Cuellar - AYAYAY (Lyric Visualizer).mp3' en la misma carpeta donde guardaste este archivo html.");
+                });
             } else {
+                romanticAudio.pause();
                 isMusicPlaying = false;
                 musicIcon.innerText = '🎵';
-                musicText.innerText = 'Melodía: Desactivada';
-                musicToggleBtn.classList.remove('border-sky-400');
-                if (melodyInterval) clearInterval(melodyInterval);
+                musicText.innerText = 'AYAYAY: Desactivada';
+                musicToggleBtn.classList.remove('border-pink-400');
             }
         });
+
+        /* ----------------------------------------------------
+           8. Arcades
+           ---------------------------------------------------- */
+        function switchLoveMode(mode) {
+            const tabs = {
+                gacha: { btn: document.getElementById('tabGachaBtn'), panel: document.getElementById('modeGacha') },
+                balloons: { btn: document.getElementById('tabBalloonsBtn'), panel: document.getElementById('modeBalloons') },
+                energy: { btn: document.getElementById('tabEnergyBtn'), panel: document.getElementById('modeEnergy') }
+            };
+
+            for (const key in tabs) {
+                if (key === mode) {
+                    tabs[key].panel.classList.remove('hidden');
+                    tabs[key].btn.className = "love-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bubble font-bold transition-all flex items-center gap-1.5 bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-md";
+                } else {
+                    tabs[key].panel.classList.add('hidden');
+                    tabs[key].btn.className = "love-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bubble font-bold transition-all flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-white/10";
+                }
+            }
+            playSoftPop();
+        }
+
+        const slotIcons = ['🐷', '💙', '💜', '👑', '⭐', '🍕', '🎮'];
+        const loveVouchers = [
+            { icon: "🍕", title: "Vale por una tarde de Roblox con tu comida favorita", desc: "Tú eliges el juego, yo pongo los snacks y la risa asegurada." },
+            { icon: "🐷", title: "Vale por mimos y abrazos ilimitados", desc: "Canjeable en cualquier momento, nunca vence." },
+            { icon: "💙", title: "Vale por ver la película o serie que tú quieras", desc: "Sin quejas, con mantitas y palomitas a tu gusto." },
+            { icon: "💜", title: "Vale por una victoria asegurada (Carreo oficial)", desc: "Te prometo cubrirte la espalda en cualquier servidor." },
+            { icon: "👑", title: "Vale de: 'Tú tienes la razón'", desc: "Úsalo sabiamente cuando tengamos un mini desacuerdo tierno." },
+            { icon: "✨", title: "Vale por una promesa de 1 año más juntos", desc: "El mejor premio de todos: seguir amándote todos los días." }
+        ];
+
+        let isSpinning = false;
+        function spinLoveSlots() {
+            if (isSpinning) return;
+            isSpinning = true;
+
+            const slot1 = document.getElementById('slot1');
+            const slot2 = document.getElementById('slot2');
+            const slot3 = document.getElementById('slot3');
+            const prizeBox = document.getElementById('prizeVoucher');
+            const leverBtn = document.getElementById('spinLeverBtn');
+
+            prizeBox.classList.add('hidden');
+            leverBtn.classList.add('opacity-50', 'pointer-events-none');
+
+            let spinSoundInterval = setInterval(() => {
+                playSoftPop();
+            }, 90);
+
+            let spins = 0;
+            const maxSpins = 18;
+
+            const interval = setInterval(() => {
+                slot1.innerText = slotIcons[Math.floor(Math.random() * slotIcons.length)];
+                slot2.innerText = slotIcons[Math.floor(Math.random() * slotIcons.length)];
+                slot3.innerText = slotIcons[Math.floor(Math.random() * slotIcons.length)];
+                spins++;
+
+                if (spins > maxSpins) {
+                    clearInterval(interval);
+                    clearInterval(spinSoundInterval);
+
+                    const luckyChar = ['🐷', '💙', '💜'][Math.floor(Math.random() * 3)];
+                    slot1.innerText = luckyChar;
+                    slot2.innerText = luckyChar;
+                    slot3.innerText = luckyChar;
+
+                    playCelebrationMelody();
+                    confetti({
+                        particleCount: 70,
+                        spread: 70,
+                        origin: { y: 0.55 },
+                        colors: ['#38bdf8', '#a855f7', '#f472b6']
+                    });
+
+                    const chosen = loveVouchers[Math.floor(Math.random() * loveVouchers.length)];
+                    document.getElementById('voucherIcon').innerText = chosen.icon;
+                    document.getElementById('voucherTitle').innerText = chosen.title;
+                    document.getElementById('voucherDesc').innerText = chosen.desc;
+
+                    prizeBox.classList.remove('hidden');
+                    leverBtn.classList.remove('opacity-50', 'pointer-events-none');
+                    isSpinning = false;
+                }
+            }, 80);
+        }
+
+        let poppedCount = 0;
+        const sweetPhrases = [
+            "¡Pop! 🐷 Te amo con locura",
+            "¡Oink! 💙 Eres mi azul preferido",
+            "¡Pop! 💜 Te cuidaré por siempre",
+            "¡Oink! ✨ Gracias por este primer año",
+            "¡Pop! 🎮 El mejor dúo de Roblox",
+            "¡Oink! 🌸 Me encantas tal y como eres"
+        ];
+
+        function launchFloatingPiggies() {
+            playCuteChime();
+            const spawnCount = 6;
+            for (let i = 0; i < spawnCount; i++) {
+                createFlyingPiggyBalloon(i * 350);
+            }
+        }
+
+        function createFlyingPiggyBalloon(delay) {
+            setTimeout(() => {
+                const piggy = document.createElement('div');
+                piggy.className = 'fixed cursor-pointer z-50 transition-transform active:scale-75 select-none';
+                piggy.style.bottom = '-80px';
+                piggy.style.left = `${10 + Math.random() * 75}vw`;
+
+                const isBlue = Math.random() > 0.5;
+                const balloonColor = isBlue ? '🎈' : '💜';
+                piggy.innerHTML = `
+                    <div class="flex flex-col items-center hover:scale-125 transition-transform filter drop-shadow-lg">
+                        <span class="text-3xl animate-bounce">${balloonColor}</span>
+                        <span class="text-3xl -mt-2">🐷</span>
+                    </div>
+                `;
+
+                document.body.appendChild(piggy);
+
+                let bottom = -80;
+                const speed = 2.2 + Math.random() * 2;
+                const swingSpeed = 0.05 + Math.random() * 0.05;
+                let swing = 0;
+
+                const flyInterval = setInterval(() => {
+                    bottom += speed;
+                    swing += swingSpeed;
+                    piggy.style.bottom = `${bottom}px`;
+                    piggy.style.transform = `translateX(${Math.sin(swing) * 20}px)`;
+
+                    if (bottom > window.innerHeight + 80) {
+                        clearInterval(flyInterval);
+                        piggy.remove();
+                    }
+                }, 20);
+
+                piggy.addEventListener('click', (e) => {
+                    clearInterval(flyInterval);
+                    playCuteChime();
+
+                    confetti({
+                        particleCount: 20,
+                        spread: 50,
+                        origin: {
+                            x: e.clientX / window.innerWidth,
+                            y: e.clientY / window.innerHeight
+                        },
+                        colors: ['#38bdf8', '#a855f7', '#fb7185']
+                    });
+
+                    poppedCount++;
+                    document.getElementById('poppedCount').innerText = poppedCount;
+
+                    const randomPhrase = sweetPhrases[Math.floor(Math.random() * sweetPhrases.length)];
+                    const toast = document.getElementById('balloonToast');
+                    toast.innerText = randomPhrase;
+                    toast.classList.add('scale-110');
+                    setTimeout(() => toast.classList.remove('scale-110'), 250);
+
+                    piggy.remove();
+                });
+            }, delay);
+        }
+
+        let loveEnergy = 15;
+        let isDiplomaAwarded = false;
+
+        function tapLoveEnergy() {
+            playCuteChime();
+            loveEnergy = Math.min(100, loveEnergy + 15);
+
+            const fill = document.getElementById('loveBarFill');
+            const percentText = document.getElementById('loveBarPercent');
+            fill.style.width = `${loveEnergy}%`;
+            percentText.innerText = `${loveEnergy}%`;
+
+            if (loveEnergy >= 100 && !isDiplomaAwarded) {
+                isDiplomaAwarded = true;
+                launchMegaCelebration();
+                document.getElementById('diplomaUnlocked').classList.remove('hidden');
+                document.getElementById('chargeLoveBtn').innerText = "✨ ¡Nivel Máximo de Amor Desbloqueado! 👑";
+                document.getElementById('chargeLoveBtn').classList.add('pointer-events-none', 'opacity-70');
+            } else if (!isDiplomaAwarded) {
+                confetti({
+                    particleCount: 10,
+                    spread: 35,
+                    origin: { y: 0.55 },
+                    colors: ['#f472b6', '#38bdf8']
+                });
+            }
+        }
     </script>
 </body>
 </html>
