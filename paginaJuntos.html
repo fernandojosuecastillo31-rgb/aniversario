@@ -637,8 +637,8 @@
 
             <!-- Barra de navegación e indicador -->
             <div class="w-full flex items-center justify-between text-xs text-slate-400 font-bubble mt-4 px-2">
-                <span id="memoryCounter">Foto 1 de 10</span>
-                <div class="flex gap-1.5" id="memoryDots"></div>
+                <span id="memoryCounter">Foto 1 de 15</span>
+                <div class="flex gap-1.5 flex-wrap justify-center max-w-[200px]" id="memoryDots"></div>
                 <button id="memoryPlayPauseBtn" onclick="toggleMemoryAutoPlay()" class="text-xs px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-sky-300">
                     ⏸ Pausar
                 </button>
@@ -736,19 +736,24 @@
         }
 
         /* ----------------------------------------------------
-           5. Galería / Carrusel Secuencial de Recuerdos
+           5. Galería / Carrusel Secuencial (cap1.png a cap15.png)
            ---------------------------------------------------- */
         const memories = [
-            { src: '114845.jpg', title: 'Te Quiero Mucho Amor 🐷💖', caption: 'Nuestro dibujo de cerdito y corazones en el pizarrón de Roblox' },
-            { src: '114839.jpg', title: 'Nuestro Corazón Rosa 🌸', caption: 'Juntos dentro del corazón con un "Te amo"' },
-            { src: '114848.jpg', title: 'Dúo Enamorados 🖤', caption: 'Feernandoc & Caracipote en nuestra banquita favorita' },
-            { src: '114846.jpg', title: 'Xime ama a Fer 💌', caption: 'Nuestros mensajes escritos en el corazón del mapa' },
-            { src: '114842.jpg', title: 'Linternas al Infinito 🏮', caption: 'Por siempre y para siempre mi Fersito, amor de mi vida' },
-            { src: '114835.jpg', title: 'Cerditos Rosas a Juego 🐷', caption: 'Con nuestros gorritos gemelos listos para la partida' },
-            { src: '114843.jpg', title: 'Tu Cerdito con Chaqueta 95 🚗', caption: 'En la granja rodeado de los cerditos más tiernos' },
-            { src: '114840.jpg', title: 'Los Cerditos Novios 💒', caption: 'Sweet Baby Piggy-Love: nosotros dos en versión peluche' },
-            { src: '114868.jpg', title: 'Tu Cerdito de Chiquito 💙', caption: 'Desde niño listo para encontrarte y amarte' },
-            { src: '114867.jpg', title: 'Mi Abejita Hermosa 🐝💜', caption: 'La niña más dulce y preciosa de todo el universo' }
+            { src: 'cap1.png', title: 'Nuestros Recuerdos 🐷💖', caption: 'Momentos inolvidables juntos en cada partida' },
+            { src: 'cap2.png', title: 'Tú y Yo Siempre 💙💜', caption: 'Construyendo nuestra propia historia' },
+            { src: 'cap3.png', title: 'El Mejor Dúo 🎮', caption: 'Siempre cubriéndonos la espalda en cada mapa' },
+            { src: 'cap4.png', title: 'Risas y Charlas 💬', caption: 'Las horas pasan volando cuando hablamos' },
+            { src: 'cap5.png', title: 'Partida Épica 🏆', caption: 'Celebrando cada victoria a tu lado' },
+            { src: 'cap6.png', title: 'Amor Cerdito 🌸', caption: 'La ternura más bonita del mundo' },
+            { src: 'cap7.png', title: 'Un Año Inolvidable ✨', caption: '365 días amándonos sin parar' },
+            { src: 'cap8.png', title: 'Nuestra Banquita 🖤', caption: 'Un rinconcito solo para nosotros dos' },
+            { src: 'cap9.png', title: 'Disfrazados y Felices 🎃', caption: 'Combinando estilo en cada servidor' },
+            { src: 'cap10.png', title: 'Xime & Fer 💌', caption: 'El amor más sincero y bonito' },
+            { src: 'cap11.png', title: 'Linternas al Infinito 🏮', caption: 'Hasta el infinito y más allá contigo' },
+            { src: 'cap12.png', title: 'Tu Cerdito de Chiquito 💙', caption: 'Destinado a encontrarte desde siempre' },
+            { src: 'cap13.png', title: 'Mi Niña Hermosa 🐝💜', caption: 'La abejita más linda y dulce de todas' },
+            { src: 'cap14.png', title: 'Los Cerditos Novios 💒', caption: 'Juntos en cada detalle y ocurrencia' },
+            { src: 'cap15.png', title: 'Por Siempre Mi Amor 💖', caption: 'Y esto recién empieza: te amo infinitamente' }
         ];
 
         let currentMemoryIndex = 0;
@@ -777,7 +782,7 @@
             container.innerHTML = '';
             memories.forEach((_, idx) => {
                 const dot = document.createElement('span');
-                dot.className = `w-2 h-2 rounded-full transition-all cursor-pointer ${idx === currentMemoryIndex ? 'bg-pink-400 w-4' : 'bg-white/30'}`;
+                dot.className = `w-1.5 h-1.5 rounded-full transition-all cursor-pointer ${idx === currentMemoryIndex ? 'bg-pink-400 w-3' : 'bg-white/30'}`;
                 dot.onclick = () => { showMemory(idx); resetMemoryTimer(); };
                 container.appendChild(dot);
             });
@@ -971,7 +976,7 @@
                     musicText.innerText = 'AYAYAY: Sonando';
                     musicToggleBtn.classList.add('border-pink-400');
                 }).catch(() => {
-                    alert("Asegúrate de guardar el archivo 'Jorge Cuellar - AYAYAY (Lyric Visualizer).mp3' en la misma carpeta donde guardaste este archivo html.");
+                    alert("Asegúrate de que el archivo 'Jorge Cuellar - AYAYAY (Lyric Visualizer).mp3' esté en la misma carpeta.");
                 });
             } else {
                 romanticAudio.pause();
